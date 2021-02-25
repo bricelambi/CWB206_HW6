@@ -41,7 +41,7 @@ function handleStudent(request, response) {
         request.on('end', () => {
 	    var data = querystring.parse(form_data);
             console.log(form_data, data);
-	    if (!data['class'] || !data['name'] || !data['class_time']) { //change these form fields
+	    if (!data['class'] || !data['name'] || !data['class_time']) {
                 response.writeHead(400);
                 response.end('missing required form fields');
             } else {
