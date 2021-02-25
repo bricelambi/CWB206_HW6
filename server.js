@@ -17,10 +17,11 @@ var server = http.createServer ( function(request,response){
 
     var path = request.url.split('/')[1]
     console.log(path);
-    //STUDENT: Use the function you create below to handle the a POST to /student that will create a new student
     if (path.startsWith("search")) {
 	console.log("search path", request.url, request.method);
 	handleSearch(request, response);
+    } else if (path.startsWith("student")) {
+	//STUDENT: Use the function you create below to handle the a POST to /student that will create a new student
     } else {
 	response.writeHead(404, {"Content-Type":"text\plain"});
 	response.end("Undefined request.");
